@@ -11,9 +11,11 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1 class="nav-title">Course Catalog</h1>
-        <a href="#/" onclick="onNavigate('/home');return false;">Home</a>
-        <a href="#/" onclick="onNavigate('/courses');return false;">Courses</a>
+        <a  class="nav-title" href="#" onclick="onNavigate('/');">
+          <strong>Course Catalog</strong>
+        </a>
+        <a href="#" class="link"  onclick="onNavigate('/home');">Home</a>
+        <a href="#" class="link"onclick="onNavigate('/courses');">Courses</a>
       </nav>
 
 
@@ -25,5 +27,6 @@
       </footer>     
 
     <script src="dist/app.min.js"></script>
+    <script type="text/javascript" src="https://www.techtransit.com/mission.courses/coursesData.js"></script>
 </body>
 </html>

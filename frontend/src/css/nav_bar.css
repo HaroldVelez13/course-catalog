@@ -11,19 +11,21 @@
   display: block;
   color: var(--color-light);
   text-align: center;
-  padding: 14px 16px;
+  padding: 1em 1em;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.2em;
 }
 .navbar a:hover {
-  background-color: var(--color-primary-light);
-  color: white;
+  color:  var(--color-primary-light);
 }
 .nav-title{
-  float: left;
-  display: block;
-  color: var(--color-light);
-  text-align: center;
-  margin-left: .5em;
-  text-decoration: none;
+  float: left !important;
+}
+.link:hover {
+  background-color: var(--color-primary-light);
+  color:  black!important;
+}
+.link-active {
+  background-color: var(--color-primary-light);
+  color:  black!important;
 }
