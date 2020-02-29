@@ -8,19 +8,19 @@ import {landing} from "./components/atom/landing"
 
 
 window.onNavigate  = (pathName) => {
+
+    let show = pathName.slice(1);
+    show = '/#/'+show;
     window.history.pushState(
         {},
-        pathName,
-        window.location.origin + pathName
+        show,
+        window.location.origin +show
     )
-    let route = window.location.pathname;
+
     let rootDiv = document.getElementById('root');
     let view = landing;
-    console.log(route)
-    switch (route) {
-        case '/':
-            view = landing;
-          break;
+    
+    switch (pathName) {
         case '/home':
             view = landing;
           break;
@@ -38,6 +38,8 @@ window.onNavigate  = (pathName) => {
 
 
 window.onload = function() {
-    window.onNavigate("/");
+    let url = window.location.pathname;
+    console.log(url)
+    window.onNavigate(url);
     
   };
