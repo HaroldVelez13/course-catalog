@@ -1,16 +1,13 @@
-
-
-
 .navbar {
   overflow: hidden;
   background-color: var(--color-primary-dark);
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999999;
 }
-
 .navbar a {
-  float: left;
+  float: right;
   display: block;
   color: var(--color-light);
   text-align: center;
@@ -18,12 +15,10 @@
   text-decoration: none;
   font-size: 17px;
 }
-
 .navbar a:hover {
-  background:var(--color-primary);
-  color: black;
+  background-color: var(--color-primary-light);
+  color: white;
 }
-
 .nav-title{
   float: left;
   display: block;
