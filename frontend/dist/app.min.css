@@ -1,0 +1,163 @@
+
+/* Generic styles */
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    margin:0;
+    
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', ;
+}
+p, a {
+  font-family: 'Playfair', sans-serif;
+}
+a {
+  border-radius: .25rem;
+  text-align: center;
+  display: inline-block;
+  transition: all .3s;
+}
+a:hover {
+  opacity: .6;
+}
+figure {
+  display: block;
+  margin: 0px !important;
+}
+.wrapper{
+  min-width: auto;
+  min-height: 90vh;
+}
+/* footer */
+footer {
+    background-color: #333;
+    padding: .75rem;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+  }
+:root {
+    --color-primary: #26a69a;
+    --color-primary-light: #80cbc4;
+    --color-primary-dark: #00897b;
+    --color-light: #f2f2f2;
+    
+  }
+.navbar {
+  overflow: hidden;
+  background-color: var(--color-primary-dark);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+}
+.navbar a {
+  float: right;
+  display: block;
+  color: var(--color-light);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background-color: var(--color-primary-light);
+  color: white;
+}
+.nav-title{
+  float: left;
+  display: block;
+  color: var(--color-light);
+  text-align: center;
+  margin-left: .5em;
+  text-decoration: none;
+}
+/* Styles for the hero image */
+.hero {
+    /* Photo by mnm.all on Unsplash */
+    background: url('https://images.unsplash.com/photo-1518176258769-f227c798150e') center;
+    background-size: cover;
+    padding: 4rem 2rem;
+    /* grid styles */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: center;
+  }
+  
+  .hero > * {
+    color: white;
+  }
+  
+  .hero > h1 {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+  }
+  
+  .hero > article > p {
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+  
+  .hero > article > a {
+    padding: 1rem;
+    margin-top: .75rem;
+  }
+  
+  /* breweries styles */
+  .breweries {
+    margin-top: 5rem;;
+    padding: 2rem;
+  }
+  
+  .breweries > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+  }
+  
+  .breweries > ul > li {
+    border: 1px solid #E2E2E2;
+    border-radius: .5rem;
+    list-style-type:none;
+  }
+  
+  .breweries > ul > li > figure {
+    max-height: 220px;
+    overflow: hidden;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    position: relative;
+  }
+  
+  .breweries > ul > li > figure > img {
+    width: 100%;
+  }
+  
+  .breweries > ul > li > figure > figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,.7);
+    width: 100%;
+  }
+  
+  .breweries > ul > li > figure > figcaption > h3 {
+    color: white;
+    padding: .75rem;
+    font-size: 1.25rem;
+  }
+  
+  .breweries > ul > li > p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem .75rem;
+    color: #666666;
+  }
+  
+  .breweries > ul > li > a {
+    padding: .5rem 1rem;
+    margin: .5rem;
+  }
+  
+
