@@ -18,21 +18,14 @@ window.onNavigate  = (pathName) => {
     )
 
     let rootDiv = document.getElementById('root');
-    let view = landing;
-    
     switch (pathName) {
-        case '/home':
-            view = landing;
-          break;
         case '/courses':
-            view = courses();
+            courses();
             break;
         default:
-            view = landing;
-        break;
-      }   
-
-    rootDiv.innerHTML = view;
+            rootDiv.innerHTML = landing;
+            break;
+      }  
     return false;
 }
 
