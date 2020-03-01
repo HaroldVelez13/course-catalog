@@ -30,6 +30,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "webpack-dev-server": "^3.10.3"
   }
 }
