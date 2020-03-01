@@ -1,17 +1,18 @@
 const express = require('express');
-
 const bodyParser = require('body-parser');
-const auth = require('./src/auth');
-const courses = require('./src/courses');
-
 const app = express();
 
+const apiRoutes = require("./src/router");
+
 // to support URL-encoded bodies
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
-
-app.use(auth);
-app.use(courses);
+app.use('/api', apiRoutes);
+/* app.use(auth);
+app.use(courses); */
 
 
 

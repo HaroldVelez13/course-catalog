@@ -32,6 +32,9 @@ const books = [
 routers.get('/courses', authenticateJWT, function (req, res){
     res.json(books);
 });
+routers.get('/courses/free', function (req, res){
+    res.json(books);
+});
 
 
 module.exports = routers
