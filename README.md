@@ -1,16 +1,18 @@
 # course-catalog
+
+## Database Docker
 ### Run DataBase
 #### docker-compose -f db/docker-compose.yml up -d mongo
 
 
-# course-catalog
+## Express Backend
 ### Make Backend
 #### cd ./backend
 #### npm i
 ### Run Backend
 #### npm run dev
 
-# course-catalog
+## Pure Frontend
 ### Meke Frontend
 #### cd ./backend
 #### npm i
