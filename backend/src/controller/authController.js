@@ -1,19 +1,19 @@
 // contactController.js
 // Import contact model
-Contact = require('./contactModel');
+Auth = require('../model/authModel');
 // Handle index actions
-exports.index = function (req, res) {
-    Contact.get(function (err, contacts) {
-        if (err) {
-            res.json({
-                status: "error",
-                message: err,
-            });
-        }
+exports.login = function (req, res) {
+    let user = Auth.get();
+    
+    if (!user) {
         res.json({
-            status: "success",
-            message: "Contacts retrieved successfully",
-            data: contacts
+            status: "error",
+            message: err,
         });
+    }
+    res.json({
+        status: "success",
+        data: user
     });
+    
 };

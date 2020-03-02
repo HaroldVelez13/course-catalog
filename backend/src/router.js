@@ -8,8 +8,8 @@ var authController = require('./controller/authController');
 
 router.route('/course').get(courseController.index);
 router.route('/auth/login').post(authController.login);
-router.route('/auth/logout').post(authController.logout);
-router.route('/auth/token').post(authController.token);
+/* router.route('/auth/logout').post(authController.logout);
+router.route('/auth/token').post(authController.token); */
 
 
 
