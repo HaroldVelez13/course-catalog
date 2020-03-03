@@ -1,5 +1,6 @@
+// Connection URL
+exports.url = 'mongodb://localhost:27017';
 
-// exports.Db = "mongodb://localhost:27017";
-exports.DB = "mongodb://localhost:27017";
-exports.DBNAME = 'courses_catalog';
+// Database Name
+exports.dbName = 'couser_catalog';
 

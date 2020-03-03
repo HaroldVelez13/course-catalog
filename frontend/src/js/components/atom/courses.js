@@ -32,7 +32,7 @@ const getCourses = () => {
 }
 
 const course = (course_obj) => `
-    <li onclick="clickHandle(${course_obj.id.trim()})" class="animated fadeIn">
+    <li onclick="clickHandle(${course_obj.id})" class="animated fadeIn">
         <figure>
         <!-- Photo by Quentin Dr on Unsplash -->
         <img src="https://techtransit.com/mission.courses${course_obj.imageUrl.trim()}" alt="${course_obj.imageText.trim()}">

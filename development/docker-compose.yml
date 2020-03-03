@@ -1,0 +1,36 @@
+# Use root/example as user/password credentials
+version: '3.1' 
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongo_data_course:/database/db
+    ports:
+      - "27017:27017"
+    # networks:
+    #   - 8080:8080  
+
+  node:
+    image: node:12
+    command:
+      - ../backend
+      - npm install
+      - npm run dev
+      - ../frontend
+      - npm install
+      - npm run dev
+      - ../development
+  # networks:
+  #   - 8080:8080
+
+
+# networks:
+#   network:
+#     driver: bridge
+
+volumes:
+  mongo_data_course: {driver: local}
+
+
