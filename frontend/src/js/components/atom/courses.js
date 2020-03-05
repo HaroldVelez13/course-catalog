@@ -1,11 +1,15 @@
-export const courses = () =>{
+export const courses = async () =>{
     let list=""
-    let courses_data = getCourses()
+    var courses_data = await  getCourses().then(async (data)=>{  
+        await data      
+        return data["courses"]
+    })
+    
     window.clickHandle = (e) =>{
         console.log('desde el clickHandle: ', e);
 
     }
-    for (let index = 0; index < 20; index++) {
+    for (let index = 0; index < 21; index++) {
         let current = courses_data[index]
         list += course(current);
         
@@ -18,9 +22,18 @@ export const courses = () =>{
 }
 
 const getCourses = () => {
-    let courses = window._courses
-    console.log(courses)
-    return courses;
+    return fetch('http://localhost:3000/api/course')
+    .then((response) => {
+        return response.text();
+    })
+    .then( async (data) => {
+        let c = await data;
+        let c_json = JSON.parse(c)         
+        return c_json   
+        
+});
+    
+    
     /* const get = fetch("https://www.techtransit.com/mission.courses/coursesData.js");
         get.then(response => {
             console.log(response);
