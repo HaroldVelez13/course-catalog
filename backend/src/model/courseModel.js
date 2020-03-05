@@ -21,10 +21,28 @@ module.exports.getAll = function (next) {
    ConnectModel.connect( db =>{
         const col = db.collection('course');
             // Get first two documents that match the query
-        col.find({}).limit(21).toArray((err, data) => {
-            assert.equal(null, err);                   
+        col.find({}).toArray((err, data) => {
+            assert.equal(null, err);                 
             next(data);       
         });
         
     })
 }
+
+module.exports.getByFilter = function (next) {
+    // Use connect method to connect to the Server
+ 
+    ConnectModel.connect( db =>{
+         const col = db.collection('course');
+             // Get first two documents that match the query
+         col.find({
+             "price":{$gt:24.5},
+             "rating": {$gt:3},
+             "maximumCredits":{$gt:2}
+            }).toArray((err, data) => {
+             assert.equal(null, err);                   
+             next(data);       
+         });
+         
+     })
+ }
