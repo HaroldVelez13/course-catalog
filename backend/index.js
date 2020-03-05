@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const MongoClient = require('mongodb').MongoClient;
+/* const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 // Connection URL
@@ -11,12 +11,15 @@ const url = 'mongodb://localhost:27017';
 const dbName = 'couser_catalog';
 
 // Create a new MongoClient
-const client = new MongoClient(url);
+const client = new MongoClient(url, {
+   useNewUrlParser: true,
+   useUnifiedTopology: true
+ });
+ */
 
 
 
-
-//const apiRoutes = require("./src/router");
+const apiRoutes = require("./src/router");
 
 
 
@@ -38,7 +41,7 @@ app.use(allowMethods);
 
 
 
-app.get('/api/course', function(req, res, next) { 
+/* app.get('/api/course', function(req, res, next) { 
 
     // Use connect method to connect to the Server
     client.connect(function(err, client) {
@@ -51,13 +54,13 @@ app.get('/api/course', function(req, res, next) {
             // Get first two documents that match the query
         col.find({}).limit(21).toArray(function(err, courses) {
             assert.equal(null, err);
-            res.send(courses); 
             client.close();
+            res.send(courses); 
         });
     });
 });
-
-//app.use('/api', apiRoutes);
+ */
+app.use('/api', apiRoutes);
 /* app.use(auth);
 app.use(courses); */
 

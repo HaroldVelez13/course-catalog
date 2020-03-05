@@ -1,26 +1,30 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
-// courseModel.js
-var dbName = require('./connectModel');
-var url = require('./connectModel');
+var ConnectModel = require('./connectModel');
+
+
+
+// Connection URL
+let url = 'mongodb://localhost:27017';
+// Database Name
+let dbName = 'couser_catalog';
 // Create a new MongoClient
-client = new MongoClient(url);
+let client = new MongoClient(url,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 
-module.exports.get = function (next) {
-    // Use connect method to connect to the Server
-    client.connect(function(err, client) {
-        assert.equal(null, err);
-        console.log("Connected correctly to server");
-    
-        const db = client.db(dbName);
-    
+module.exports.getAll = function (next) {
+   // Use connect method to connect to the Server
+
+   ConnectModel.connect( db =>{
         const col = db.collection('course');
             // Get first two documents that match the query
-        col.find({}).limit(21).toArray(function(err, courses) {
-            assert.equal(null, err);
-            next(courses); 
-            client.close();
+        col.find({}).limit(21).toArray((err, data) => {
+            assert.equal(null, err);                   
+            next(data);       
         });
-    });
+        
+    })
 }
